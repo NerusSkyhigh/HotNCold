@@ -31,6 +31,8 @@ FetchContent_MakeAvailable(raylib)
 target_sources(${PROJECT_NAME}
         PRIVATE
         src/Grid.cpp
+        src/GridRenderer.cpp
+        src/Solver.cpp
 )
 target_include_directories(${PROJECT_NAME}
         PRIVATE
