@@ -4,14 +4,18 @@
 #include "Solver.h"
 
 int main() {
-    Grid grid(10, 10);
+    Grid grid(21, 21);
     grid.initialize();
 
     Solver solver(grid, 0.1f, 1.0f);
-    GridRenderer renderer(grid, 80);
+    GridRenderer renderer(grid, 40);
 
-    InitWindow(800, 800, "Heat Equation");
-    SetTargetFPS(12000);
+    #ifdef __APPLE__
+        SetConfigFlags(FLAG_WINDOW_HIGHDPI);
+    #endif
+    InitWindow(840, 840, "Heat Equation");
+
+    SetTargetFPS(60);
 
     while (!WindowShouldClose()) {
         solver.step();
